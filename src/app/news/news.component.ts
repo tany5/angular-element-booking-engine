@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss',
+  standalone: true,
+  imports: [CommonModule, HttpClientModule],
+  providers: [DataService],
 })
 export class NewsComponent {
   articles: any[] = [];

@@ -1,7 +1,13 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import {createApplication} from '@angular/platform-browser';
+import {appConfig} from './main.config';
+import {createCustomElement} from '@angular/elements';
+import { ApplicationRef } from '@angular/core';
+import { NewsComponent } from './app/news/news.component';
 
-import { AppModule } from './app/app.module';
+(async () => {
+  const app: ApplicationRef = await createApplication(appConfig);
 
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+  // Define Web Components
+  const newsWidget = createCustomElement(NewsComponent, {injector: app.injector});
+  customElements.define('news-widget', newsWidget);
+})();

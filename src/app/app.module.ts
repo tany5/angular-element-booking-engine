@@ -8,18 +8,18 @@ import { NewsComponent } from './news/news.component';
 import { createCustomElement } from '@angular/elements';
 
 @NgModule({
-  declarations: [AppComponent, NewsComponent],
+  declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule implements DoBootstrap {
-  constructor(private injector: Injector) {}
-  ngDoBootstrap(appRef: ApplicationRef) {
-    const NewsElement = createCustomElement(NewsComponent, {
-      injector: this.injector,
-    });
-    // Register the custom element with the browser.
-    customElements.define('news-widget', NewsElement);
-  }
+export class AppModule {
+  // constructor(private injector: Injector) {}
+  // ngDoBootstrap(appRef: ApplicationRef) {
+  //   const NewsElement = createCustomElement(NewsComponent, {
+  //     injector: this.injector,
+  //   });
+  //   // Register the custom element with the browser.
+  //   customElements.define('news-widget', NewsElement);
+  // }
 }
