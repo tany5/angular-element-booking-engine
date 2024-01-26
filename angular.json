@@ -31,14 +31,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
-            "scripts": [
-              {
-                "input": "./scripts/postbuild-bundler.js",
-                "bundleName": "bundle",
-                "inject": false
-              }
-            ]
+            "styles": ["src/styles.scss"]
           },
           "configurations": {
             "production": {
