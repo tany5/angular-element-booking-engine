@@ -1,25 +1,27 @@
-import { ApplicationRef, DoBootstrap, Injector, NgModule } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
+import { NgModule, DoBootstrap, Injector, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { NewsComponent } from './news/news.component';
-import { createCustomElement } from '@angular/elements';
+import { DataService } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent, NewsComponent],
+  imports: [CommonModule, BrowserModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [], // originally it has AppComponent
 })
-export class AppModule {
-  // constructor(private injector: Injector) {}
-  // ngDoBootstrap(appRef: ApplicationRef) {
-  //   const NewsElement = createCustomElement(NewsComponent, {
-  //     injector: this.injector,
-  //   });
-  //   // Register the custom element with the browser.
-  //   customElements.define('news-widget', NewsElement);
-  // }
+export class AppModule implements DoBootstrap {
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap(appRef: ApplicationRef) {
+    const newsWidget = createCustomElement(NewsComponent, {
+      injector: this.injector,
+    });
+    customElements.define('news-widget', newsWidget);
+  }
 }
