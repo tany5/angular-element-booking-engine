@@ -17,10 +17,10 @@ export class BookingComponent implements OnInit, OnDestroy {
 
   setImageUrl(width: number) {
     if (width > 600) {
-      this.setImageSrc = 'https://angular-element-booking-engine.vercel.app/assets/images/banner/roldrive-booking-background.svg';
+      this.setImageSrc = 'assets/images/banner/roldrive-booking-background.svg';
     } else {
       this.setImageSrc =
-        'https://angular-element-booking-engine.vercel.app/assets/images/banner/roldrive-booking-background-mobile.webp';
+        'assets/images/banner/roldrive-booking-background-mobile.webp';
     }
   }
 
