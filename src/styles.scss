@@ -1,5 +1,92 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+@import "./app/colors";
+// Plus imports for other components in your app.
 
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$booking-web-component-primary: mat.define-palette($custom-brand-primary);
+$booking-web-component-accent: mat.define-palette(
+  mat.$pink-palette,
+  A200,
+  A100,
+  A400
+);
+
+// The warn palette is optional (defaults to red).
+$booking-web-component-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$booking-web-component-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $booking-web-component-primary,
+      accent: $booking-web-component-accent,
+      warn: $booking-web-component-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($booking-web-component-theme);
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+
+*:focus,
+textarea:focus {
+  outline: none !important;
+}
+
+button:focus-visible {
+  outline: none !important;
+  border: 0 !important;
+  box-shadow: 0 0 0 transparent !important;
+}
+
+button:focus,
+textarea.form-control:focus,
+.btn:focus,
+.btn:active,
+button:active,
+input,
+:active {
+  outline: none;
+  box-shadow: 0 0 0 white;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+*:focus:not(.focus-visible) {
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 40px white inset !important;
+}

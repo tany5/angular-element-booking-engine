@@ -11,6 +11,6 @@ import { TitleComponent } from './typography/title/title.component';
     TitleComponent,
   ],
   imports: [CommonModule],
-  exports: [ButtonComponent],
+  exports: [ButtonComponent, TitleComponent],
 })
 export class SharedModule {}

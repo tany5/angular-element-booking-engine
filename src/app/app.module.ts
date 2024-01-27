@@ -9,10 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { BookingModule } from './booking/booking.module';
 import { BookingComponent } from './booking/booking.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, NewsComponent],
-  imports: [CommonModule, BrowserModule, FormsModule, HttpClientModule, BookingModule],
+  imports: [CommonModule, BrowserModule, FormsModule, HttpClientModule, BookingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [], // originally it has AppComponent
 })

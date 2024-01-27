@@ -1,1 +1,91 @@
-<p>banner works!</p>
+<div
+  class="relative w-full m-auto min-w-[320px] bg-[#010310] z-[1] flex items-end lg:px-6 xl:px-16 md:px-4 px-0"
+>
+  <div
+    class="relative mx-auto lg:container w-full flex sm:flex-row flex-col md:justify-between gap-4"
+  >
+    <div class="md:mt-24 sm:mt-30 mt-20 z-[6]">
+      <div class="xl:w-fit lg:w-auto w-fit mx-auto">
+        <app-title
+          class="text-[#FFFFFFEB] font-normal !leading-tight !font-manrope"
+        >
+          Chauffeur Service Redefined
+        </app-title>
+        <div
+          class="flex md:flex-row flex-col lg:justify-between items-start gap-2 md:pb-4 sm:py-0 py-2 flex-wrap"
+        >
+          <div class="flex gap-x-2 items-center">
+            <div class="w-[18px] h-[18px] -mb-1.5">
+              <img
+                src="assets/images/icons/phone-outline-primary.svg"
+                alt="phone-outline-primary"
+              />
+            </div>
+            <a class="text-white !text-sm font-normal" href="tel:+442071128101">
+              +44 (0) 207 112 8101
+            </a>
+          </div>
+          <div class="flex gap-x-2 items-center">
+            <div class="w-[20px] h-[16px] -mb-1.5">
+              <img
+                src="assets/images/icons/mail-outline-primary.svg"
+                alt="mail-outline-primary"
+              />
+            </div>
+            <a
+              class="text-white !text-sm font-normal"
+              href="mailto:booking@roldrive.com"
+            >
+              booking.roldrive.com
+            </a>
+          </div>
+          <div class="flex gap-x-2 items-end">
+            <a
+              target="_blank"
+              href="https://wa.me/442071128101"
+              rel="noreferrer"
+            >
+              <div class="flex">
+                <mat-icon class="text-primary text-orange-500 text-xl"
+                  >share</mat-icon
+                >
+                <P class="text-white !text-sm font-normal">
+                  +44 (0) 207 112 8101
+                </P>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="relative bg-white sm:mb-8 lg:mt-20 md:mt-16 sm:mt-32 mt-0 top-auto min-h-[400px] sm:w-[26rem] w-full z-[9] sm:rounded-md"
+    >
+      <!-- <BookingProvider>
+              <BookingEngine3 />
+            </BookingProvider> -->
+    </div>
+  </div>
+  <div
+    class="left-0 sm:bottom-0 sm:top-auto top-0 sm:opacity-100 opacity-80 z-[-1] absolute {{
+      width > 600 ? 'h-full' : 'h-52'
+    }}  overflow-y-hidden"
+  >
+    <picture class="w-80vw max-w-full h-full">
+      <source [srcset]="imageSrc" type="image/svg" media="(max-width: 640px)" />
+      <source
+        [srcset]="imageSrc"
+        type="image/svg"
+        media="(max-width: 1024px)"
+      />
+      <source [srcset]="imageSrc" type="image/webp" />
+      <img
+        class="w-full h-full  {{
+          width > 600 ? 'object-cover' : 'object-fill'
+        }}"
+        src="imageSrc"
+        alt="Responsive Image"
+      />
+    </picture>
+  </div>
+</div>
