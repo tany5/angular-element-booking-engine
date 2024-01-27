@@ -7,7 +7,7 @@
     "build": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
     "test": "ng test",
-    "build:component": "ng build --output-hashing none && npm run build",
+    "build:component": "ng build --output-hashing none --base-href https://angular-element-booking-engine.vercel.app/ && npm run build",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "serve": "webpack serve"

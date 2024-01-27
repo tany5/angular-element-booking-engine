@@ -1,4 +1,5 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { environment } from '../../environments/environment.development';
 
 @Component({
   selector: 'app-booking',
@@ -17,10 +18,9 @@ export class BookingComponent implements OnInit, OnDestroy {
 
   setImageUrl(width: number) {
     if (width > 600) {
-      this.setImageSrc = 'assets/images/banner/roldrive-booking-background.svg';
+      this.setImageSrc = `${environment.ASSET_PATH}assets/images/banner/roldrive-booking-background.svg`;
     } else {
-      this.setImageSrc =
-        'assets/images/banner/roldrive-booking-background-mobile.webp';
+      this.setImageSrc = `${environment.ASSET_PATH}assets/images/banner/roldrive-booking-background-mobile.webp`;
     }
   }
 
