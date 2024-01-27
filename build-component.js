@@ -12,7 +12,7 @@ const build = async () => {
     await fs.ensureDir("widget");
 
     // Concatenate files after ensuring the directory is created
-    await concat(files, "widget/news-widget.js");
+    await concat(files, "widget/booking-widget.js");
 
     console.log("Concatenation successful!");
   } catch (err) {

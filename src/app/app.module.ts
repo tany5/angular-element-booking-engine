@@ -7,10 +7,12 @@ import { FormsModule } from '@angular/forms';
 import { NewsComponent } from './news/news.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { BookingModule } from './booking/booking.module';
+import { BookingComponent } from './booking/booking.component';
 
 @NgModule({
   declarations: [AppComponent, NewsComponent],
-  imports: [CommonModule, BrowserModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, BrowserModule, FormsModule, HttpClientModule, BookingModule],
   providers: [],
   bootstrap: [], // originally it has AppComponent
 })
@@ -18,9 +20,9 @@ export class AppModule implements DoBootstrap {
   constructor(private injector: Injector) {}
 
   ngDoBootstrap(appRef: ApplicationRef) {
-    const newsWidget = createCustomElement(NewsComponent, {
+    const bookingWidget = createCustomElement(BookingComponent, {
       injector: this.injector,
     });
-    customElements.define('news-widget', newsWidget);
+    customElements.define('booking-widget', bookingWidget);
   }
 }
