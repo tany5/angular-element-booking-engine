@@ -18,9 +18,10 @@ export class BookingComponent implements OnInit, OnDestroy {
 
   setImageUrl(width: number) {
     if (width > 600) {
-      this.setImageSrc = `${environment.ASSET_PATH}assets/images/banner/roldrive-booking-background.svg`;
+      this.setImageSrc = '/assets/images/banner/roldrive-booking-background.svg';
     } else {
-      this.setImageSrc = `${environment.ASSET_PATH}assets/images/banner/roldrive-booking-background-mobile.webp`;
+      this.setImageSrc =
+        `/assets/images/banner/roldrive-booking-background-mobile.webp`;
     }
   }
 
