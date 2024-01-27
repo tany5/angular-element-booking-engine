@@ -1,4 +1,5 @@
 const path = require("path");
+const ASSET_PATH = process.env.ASSET_PATH || '';
 module.exports = {
   entry: {
     "bundle.js": [
@@ -16,6 +17,7 @@ module.exports = {
   output: {
     filename: "[name]",
     path: path.resolve(__dirname, "dist/booking-web-component/browser/"),
+    publicPath: ASSET_PATH,
   },
   module: {
     rules: [
