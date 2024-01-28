@@ -1,3 +1,4 @@
-export const environment = { 
-  ASSET_PATH: 'https://angular-element-booking-engine.vercel.app/',
+export const environment = {
+    production: true,
+    ASSET_PATH:'https://angular-element-booking-engine.vercel.app/'
 };

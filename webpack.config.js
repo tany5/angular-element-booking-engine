@@ -1,5 +1,5 @@
-const webpack = require("webpack");
 const path = require("path");
+
 module.exports = {
   entry: {
     "bundle.js": [
@@ -17,7 +17,6 @@ module.exports = {
   output: {
     filename: "[name]",
     path: path.resolve(__dirname, "dist/booking-web-component/browser/"),
-    publicPath: "auto",
   },
   module: {
     rules: [

@@ -1,3 +1,4 @@
 export const environment = {
-  ASSET_PATH: '',
+    production: false,
+    ASSET_PATH:''
 };
