@@ -15,10 +15,14 @@
           class="flex md:flex-row flex-col lg:justify-between items-start gap-2 md:pb-4 sm:py-0 py-2 flex-wrap"
         >
           <div class="flex gap-x-2 items-center">
-            <div class="w-[18px] h-[18px] -mb-1.5">
+            <div class="w-[18px] h-[16px] -mb-1.5 relative">
               <img
-                src="{{ASSET_PATH}}/assets/images/icons/phone-outline-primary.svg"
-                alt="phone-outline-primary"
+                ngSrc="{{
+                  ASSET_PATH
+                }}/assets/images/icons/phone-outline-primary.svg"
+                alt="phone"
+                fill
+                loading="eager"
               />
             </div>
             <a class="text-white !text-sm font-normal" href="tel:+442071128101">
@@ -26,10 +30,14 @@
             </a>
           </div>
           <div class="flex gap-x-2 items-center">
-            <div class="w-[20px] h-[16px] -mb-1.5">
+            <div class="w-[18px] h-[16px] -mb-1.5 relative">
               <img
-                src="{{ASSET_PATH}}/assets/images/icons/mail-outline-primary.svg"
-                alt="mail-outline-primary"
+                ngSrc="{{
+                  ASSET_PATH
+                }}/assets/images/icons/mail-outline-primary.svg"
+                alt="mail"
+                fill
+                loading="eager"
               />
             </div>
             <a
@@ -46,10 +54,16 @@
               rel="noreferrer"
             >
               <div class="flex">
-                <mat-icon class="text-primary text-orange-500 text-xl"
-                  >share</mat-icon
-                >
-                <P class="text-white !text-sm font-normal">
+                <div class="w-[20px] h-[20px] relative">
+                  <img
+                    class="-mb-3.5"
+                    ngSrc="{{ ASSET_PATH }}/assets/images/icons/whatsapp.png"
+                    alt="whatsapp"
+                    fill
+                    loading="eager"
+                  />
+                </div>
+                <P class="text-white !text-sm font-normal pl-1">
                   +44 (0) 207 112 8101
                 </P>
               </div>
@@ -80,7 +94,7 @@
       />
       <source [srcset]="imageSrc" type="image/webp" />
       <img
-        class="w-full h-full  {{
+        class="w-full h-full relative  {{
           width > 600 ? 'object-cover' : 'object-fill'
         }}"
         [src]="imageSrc"
