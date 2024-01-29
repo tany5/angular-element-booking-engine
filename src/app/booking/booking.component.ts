@@ -7,8 +7,7 @@ import { environment } from '../../environments/environment';
   styleUrl: './booking.component.scss',
 })
 export class BookingComponent implements OnInit, OnDestroy {
-  public getScreenWidth: any;
-  public getScreenHeight: any;
+  public getScreenWidth: number;
   setImageSrc: string = '';
   constructor() {
     this.getScreenWidth = window.innerWidth;

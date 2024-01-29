@@ -1,5 +1,5 @@
 import { createCustomElement } from '@angular/elements';
-import { NgModule, DoBootstrap, Injector, ApplicationRef } from '@angular/core';
+import { NgModule, DoBootstrap, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -20,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export class AppModule implements DoBootstrap {
   constructor(private injector: Injector) {}
 
-  ngDoBootstrap(appRef: ApplicationRef) {
+  ngDoBootstrap() {
     const bookingWidget = createCustomElement(BookingComponent, {
       injector: this.injector,
     });

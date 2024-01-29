@@ -7,7 +7,7 @@ import { environment } from '../../../../environments/environment';
   styleUrl: './banner.component.scss',
 })
 export class BannerComponent {
-  @Input() width: any;
+  @Input() width: number = 0;
   @Input() imageSrc: string = '';
 
   ASSET_PATH: string = environment.ASSET_PATH;
