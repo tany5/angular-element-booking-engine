@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { NewsComponent } from './news/news.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { BookingModule } from './booking/booking.module';
@@ -12,7 +11,7 @@ import { BookingComponent } from './booking/booking.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, NewsComponent],
+  declarations: [AppComponent],
   imports: [CommonModule, BrowserModule, FormsModule, HttpClientModule, BookingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [], // originally it has AppComponent
