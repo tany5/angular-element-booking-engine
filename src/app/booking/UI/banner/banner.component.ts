@@ -8,6 +8,7 @@ import { environment } from '../../../../environments/environment';
 })
 export class BannerComponent {
   @Input() width: number = 0;
+  @Input() tagLine: string = 'Chauffeur Service Redefined';
   @Input() imageSrc: string = '';
 
   ASSET_PATH: string = environment.ASSET_PATH;

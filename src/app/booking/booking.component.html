@@ -1,1 +1,13 @@
-<app-banner [width]="getScreenWidth" [imageSrc]="setImageSrc" />
+<app-banner
+  [width]="getScreenWidth"
+  [imageSrc]="setImageSrc"
+  tagLine="Chauffeur Service Redefined"
+>
+  <button
+    (click)="searchBooking()"
+    class="lf-bg-orange-500 lf-px-4 lf-w-full lf-text-white lf-py-2 lf-text-center lf-text-lg lf-uppercase lf-font-semibold lf-mt-auto"
+    bookingEngine
+  >
+    search ride
+  </button>
+</app-banner>

@@ -1,4 +1,12 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { environment } from '../../environments/environment';
 
 @Component({
@@ -7,6 +15,9 @@ import { environment } from '../../environments/environment';
   styleUrl: './booking.component.scss',
 })
 export class BookingComponent implements OnInit, OnDestroy {
+  @Input() tagLine: string = '';
+  @Output() onSearch: EventEmitter<any> = new EventEmitter();
+
   public getScreenWidth: number;
   setImageSrc: string = '';
   constructor() {
@@ -21,6 +32,11 @@ export class BookingComponent implements OnInit, OnDestroy {
     } else {
       this.setImageSrc = `${environment.ASSET_PATH}/assets/images/banner/roldrive-booking-background-mobile.webp`;
     }
+  }
+
+  searchBooking() {
+    console.log('searching');
+    this.onSearch.emit('searching');
   }
 
   ngOnDestroy(): void {}

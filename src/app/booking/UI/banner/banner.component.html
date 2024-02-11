@@ -1,21 +1,21 @@
 <div
-  class="relative w-full m-auto min-w-[320px] bg-[#010310] z-[1] flex items-end lg:px-6 xl:px-16 md:px-4 px-0"
+  class="lf-relative lf-w-full lf-m-auto lf-min-w-[320px] lf-bg-[#010310] lf-z-[1] lf-flex lf-items-end lg:lf-px-6 xl:lf-px-16 md:lf-px-4 lf-px-0"
 >
   <div
-    class="relative mx-auto lg:container w-full flex sm:flex-row flex-col md:justify-between gap-4"
+    class="lf-relative lf-mx-auto lg:lf-container lf-w-full lf-flex sm:lf-flex-row lf-flex-col md:lf-justify-between lf-gap-4"
   >
-    <div class="md:mt-24 sm:mt-30 mt-20 z-[6]">
-      <div class="xl:w-fit lg:w-auto w-fit mx-auto">
+    <div class="md:lf-mt-24 sm:lf-mt-30 lf-mt-20 lf-z-[6]">
+      <div class="xl:lf-w-fit lg:lf-w-auto lf-w-fit mx-auto">
         <app-title
-          class="text-[#FFFFFFEB] font-normal !leading-tight !font-manrope"
+          class="lf-text-[#FFFFFFEB] lf-font-normal !lf-leading-tight !lf-font-manrope"
         >
-          Chauffeur Service Redefined
+          {{ tagLine }}
         </app-title>
         <div
-          class="flex md:flex-row flex-col lg:justify-between items-start gap-2 md:pb-4 sm:py-0 py-2 flex-wrap"
+          class="lf-flex md:lf-flex-row lf-flex-col lg:lf-justify-between lf-items-start lf-gap-2 md:lf-pb-4 sm:lf-py-0 lf-py-2 lf-flex-wrap"
         >
-          <div class="flex gap-x-2 items-center">
-            <div class="w-[18px] h-[16px] -mb-1.5 relative">
+          <div class="lf-flex lf-gap-x-2 lf-items-center">
+            <div class="lf-w-[18px] lf-h-[16px] -lf-mb-1.5 lf-relative">
               <img
                 ngSrc="{{
                   ASSET_PATH
@@ -25,12 +25,12 @@
                 loading="eager"
               />
             </div>
-            <a class="text-white !text-sm font-normal" href="tel:+442071128101">
+            <a class="lf-text-white !lf-text-sm lf-font-normal" href="tel:+442071128101">
               +44 (0) 207 112 8101
             </a>
           </div>
-          <div class="flex gap-x-2 items-center">
-            <div class="w-[18px] h-[16px] -mb-1.5 relative">
+          <div class="lf-flex lf-gap-x-2 lf-items-center">
+            <div class="lf-w-[18px] lf-h-[16px] -lf-mb-1.5 lf-relative">
               <img
                 ngSrc="{{
                   ASSET_PATH
@@ -41,29 +41,29 @@
               />
             </div>
             <a
-              class="text-white !text-sm font-normal"
+              class="lf-text-white !lf-text-sm lf-font-normal"
               href="mailto:booking@roldrive.com"
             >
               booking.roldrive.com
             </a>
           </div>
-          <div class="flex gap-x-2 items-end">
+          <div class="lf-flex lf-gap-x-2 lf-items-end">
             <a
               target="_blank"
               href="https://wa.me/442071128101"
               rel="noreferrer"
             >
-              <div class="flex">
-                <div class="w-[20px] h-[20px] relative">
+              <div class="lf-flex">
+                <div class="lf-w-[20px] lf-h-[20px] lf-relative">
                   <img
-                    class="-mb-3.5"
+                    class="-lf-mb-3.5"
                     ngSrc="{{ ASSET_PATH }}/assets/images/icons/whatsapp.png"
                     alt="whatsapp"
                     fill
                     loading="eager"
                   />
                 </div>
-                <P class="text-white !text-sm font-normal pl-1">
+                <P class="lf-text-white !lf-text-sm lf-font-normal lf-pl-1">
                   +44 (0) 207 112 8101
                 </P>
               </div>
@@ -73,16 +73,17 @@
       </div>
     </div>
     <div
-      class="relative bg-white sm:mb-8 lg:mt-20 md:mt-16 sm:mt-32 mt-0 top-auto min-h-[400px] sm:w-[26rem] w-full z-[9] sm:rounded-md"
+      class="lf-relative lf-bg-white sm:lf-mb-8 lg:lf-mt-20 md:lf-mt-16 sm:lf-mt-32 lf-mt-0 lf-top-auto lf-min-h-[400px] sm:lf-w-[26rem] lf-w-full lf-z-[9] sm:lf-rounded-md"
     >
+    <ng-content select="[bookingEngine]"></ng-content>
   </div>
   </div>
   <div
-    class="left-0 sm:bottom-0 sm:top-auto top-0 sm:opacity-100 opacity-80 z-[-1] absolute {{
-      width > 600 ? 'h-full' : 'h-52'
-    }}  overflow-y-hidden"
+    class="lf-left-0 sm:lf-bottom-0 sm:lf-top-auto lf-top-0 sm:lf-opacity-100 lf-opacity-80 lf-z-[-1] lf-absolute {{
+      width > 600 ? 'lf-h-full' : 'lf-h-52'
+    }}  lf-overflow-y-hidden"
   >
-    <picture class="w-80vw max-w-full h-full">
+    <picture class="lf-w-80vw lf-max-w-full lf-h-full">
       <source [srcset]="imageSrc" type="image/svg" media="(max-width: 640px)" />
       <source
         [srcset]="imageSrc"
@@ -91,8 +92,8 @@
       />
       <source [srcset]="imageSrc" type="image/webp" />
       <img
-        class="w-full h-full relative  {{
-          width > 600 ? 'object-cover' : 'object-fill'
+        class="lf-w-full lf-h-full lf-relative  {{
+          width > 600 ? 'lf-object-cover' : 'lf-object-fill'
         }}"
         [src]="imageSrc"
         alt="Responsive Image"
